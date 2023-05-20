@@ -1,0 +1,47 @@
+name: "Unit Tests"
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+  workflow_dispatch:
+
+# Allow one concurrent tox session
+concurrency:
+  group: "tox"
+  cancel-in-progress: true
+
+jobs:
+  run-tox:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.8', '3.10']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install tox tox-gh-actions
+    - name: Tox Cache
+      id: cache-tox
+      uses: actions/cache@v3
+      with:
+        path: .tox
+        # pyproject.toml has versioning info that would impact the tox environment.
+        key: tox-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml') }}
+    - name: Playwright Cache
+      id: cache-playwright
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache
+        # pyproject.toml has versioning info that would impact the tox environment.
+        key: playwright-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml') }}
+    - name: Test with tox
+      run: tox
