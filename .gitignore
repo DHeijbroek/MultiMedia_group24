@@ -73,8 +73,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/build/
-docs/source/generated/
+TikTokPy-main/docs/build/
+TikTokPy-main/docs/source/generated/
 
 # PyBuilder
 .pybuilder/
@@ -165,5 +165,8 @@ cython_debug/
 .idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
-examples/
+TikTokPy-main/examples/
 cov_report.xml
+
+# Do not upload generated videos (yet)
+TikTokPy-main/videos/
