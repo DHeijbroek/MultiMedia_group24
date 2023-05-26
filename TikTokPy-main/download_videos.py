@@ -90,10 +90,6 @@ async def download_video(url, tag):
         url_list.append(url)
         video_id_list.append(video.id)
         
-        # check if video already exists
-        if os.path.exists(os.path.join(directory, tag, str(video.id) + '.mp4')):
-            print(f'already processed {video.id}')
-            return
         print(f'processing {video.id} of url {url}')
         
         # print(video)
