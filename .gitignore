@@ -170,3 +170,7 @@ cov_report.xml
 
 # Do not upload generated videos (yet)
 TikTokPy-main/videos/
+
+# Do not upload all seperate videos and images in the Py-Feat module
+Py-Feat-main/videos/
+Py-Feat-main/images/
