@@ -3,3 +3,8 @@ Run the jupyter notebook file and follow the step-by-step instructions on each s
 
 ## Conda environment
 Specific python packages are required and can be installed using the requirements.txt file from this specific folder. 
+
+## Directories
+ensure that the following directories exist:
+- Py-Feat-main/videos/ (containing all of the VIDEO_ID.mp4 files)
+- Py-Feat-main/images/ (where all of the video frames will be dumped into)
