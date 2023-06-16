@@ -7,6 +7,10 @@ TikTokPy-main includes the TikTok API code we used. Its instruction can be found
 - Run the python script
 - The videos can be found under videos/video_id
 
+RoBERTa
+- Load text from the transcriptions
+- Run the text through SiEBERT to calculate sentiment scores
+
 Py-Feat
 - Transform the videos into separate frames
 - Run a facial recognition model on the frames to compute the emotions
