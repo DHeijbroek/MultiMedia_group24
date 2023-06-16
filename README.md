@@ -6,9 +6,11 @@ TikTokPy-main includes the TikTok API code we used. Its instruction can be found
 - Load a list of video URLs
 - Run the python script
 - The videos can be found under videos/video_id
+
 Py-Feat
 - Transform the videos into separate frames
 - Run a facial recognition model on the frames to compute the emotions
+
 Classification
 - Load all of the features extracted from the different models
 - Run classification algorithms and compare the results by looking at the confusion matrix. 
